@@ -2,10 +2,16 @@
 
 namespace Database\Factories;
 
+use App\Models\Comment;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class CommentFFactory extends Factory
-{
+class CommentFactory extends Factory
+{   /**
+     * The name of the factory's corresponding model.
+     *
+     * @var string
+     */ 
+    protected $model = Comment::class;
     /**
      * Define the model's default state.
      *
@@ -14,7 +20,7 @@ class CommentFFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'text' => $this->faker->sentence(10),
         ];
     }
 }

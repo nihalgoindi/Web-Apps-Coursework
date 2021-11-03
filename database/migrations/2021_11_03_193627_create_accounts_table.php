@@ -17,7 +17,6 @@ class CreateAccountsTable extends Migration
             $table->id();
             $table->string('username');
             $table->string('email_address');
-            $table->string('password');
             $table->integer('number_of_posts');
             $table->timestamps();
         });

@@ -25,6 +25,7 @@ class PostFactory extends Factory
             'caption' => $this->faker->sentence(10),
             'number_of_likes' => $this->faker->randomDigitNotNull,
             'number_of_comments' => $this->faker->randomDigitNotNull,
+            'enclosure_id' => 1,
         ];
     }    
 }

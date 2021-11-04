@@ -18,7 +18,15 @@ class CreatePostsTable extends Migration
             $table->string('caption');
             $table->integer('number_of_likes')->nullable();
             $table->integer('number_of_comments')->nullable();
+            $table->bigInteger('account_id')->unsigned();
+            
+
+            $table->foreign('account_id')->references('id')->
+                on('accounts')->onDelete('cascade')->
+                onUpdate('cascade');
+
             $table->timestamps();
+
         });
     }
 

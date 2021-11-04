@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Account extends Model
 {
     use HasFactory;
+
+    /**
+     * Get the posts that belong to the account.
+     */
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
+    }
 }

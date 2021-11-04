@@ -14,6 +14,7 @@ class PostTableSeeder extends Seeder
     public function run()
     {
         $p = new Post;
+        $p->account_id = 1; //ElonM
         $p->caption = "First Post!";
         $p->save();
 

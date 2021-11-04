@@ -17,5 +17,13 @@ class Post extends Model
         return $this->belongsTo(Account::class);
     }
 
+    /**
+     * Get the comments that belong to the post.
+     */
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
 
 }
+

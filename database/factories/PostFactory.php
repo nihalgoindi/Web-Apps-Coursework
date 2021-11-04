@@ -2,7 +2,9 @@
 
 namespace Database\Factories;
 
+
 use App\Models\Post;
+use App\Models\Account;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class PostFactory extends Factory
@@ -25,7 +27,7 @@ class PostFactory extends Factory
             'caption' => $this->faker->sentence(10),
             'number_of_likes' => $this->faker->randomDigitNotNull,
             'number_of_comments' => $this->faker->randomDigitNotNull,
-            'enclosure_id' => 1,
+            'account_id' => Account::inRandomOrder()->first()->id,
         ];
     }    
 }

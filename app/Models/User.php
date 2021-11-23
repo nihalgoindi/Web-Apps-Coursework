@@ -42,8 +42,11 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    /**
+     * The account that belongs to this user
+     */
     public function account()
     {
-        return $this-hasOne(Account:class);
+        return $this->hasOne(Account:class);
     }
 }

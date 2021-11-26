@@ -17,12 +17,3 @@ use app\Http\Controllers;
 Route::get('/', function () {
     return view('welcome');
 });
-<<<<<<< HEAD
-=======
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
-
-require __DIR__.'/auth.php';
->>>>>>> parent of 07b10d5 (Revert "Installed Breeze")

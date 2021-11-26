@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-    <p>The Posts within this Community!</p>
+    <p>The Posts within this Community:</p>
     <ul>
         @foreach ($posts as $post)
             <li> <a href="{{ route('posts.show', [ 'id' => $post->id ] )}}">{{$post->name}}</a></li>

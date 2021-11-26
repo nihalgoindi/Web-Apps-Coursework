@@ -35,23 +35,7 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        $validatedData = $request->validate([
-            'title' => 'required|max:255',
-            'caption' => 'nullable',
-            'number_of_likes' => 'nullable|integer'
-            'number_of_comments' => 'nullable|integer'
-        ]);
-
-        $p = new Post;
-        $p->title = $validatedData['title']
-        $p->caption = $validatedData['title']
-        $p->number_of_likes = $validatedData['number_of_likes']
-        $p->number_of_comments = $validatedData['number_of_comments']
-        $p->save();
-
-        session()->flash('message', 'Post created successfully.');
-        return redirect()->route('posts.index');
-
+        //
     }
 
     /**
@@ -62,8 +46,7 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        $post = Post::findOrFail($id);
-        return view('posts.show', ['post' => $post]);
+        //
     }
 
     /**

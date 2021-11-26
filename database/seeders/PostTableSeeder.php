@@ -16,7 +16,7 @@ class PostTableSeeder extends Seeder
         $p = new Post;
         $p->account_id = 1; //ElonM
         $p->caption = "First Post!";
-        $p->title = "First Post!"
+        $p->title = "First Post!";
         $p->save();
 
         $posts = Post::factory()->count(10)->create();

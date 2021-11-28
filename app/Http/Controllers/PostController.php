@@ -36,7 +36,25 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+         $validatedData = $request->validate([
+            'title' => 'required|max:255',
+            'caption' => 'nullable|string',
+            'number_of_likes' => 'nullable|integer',
+            'number_of_comments' => 'nullable|integer',
+            'account_id' => 'required|integer',
+        ]);
+
+
+        $p = new Post;
+        $p->title = $validatedData['title'];
+        $p->caption = $validatedData['caption'];
+        $p->number_of_likes = $validatedData['number_of_likes'];
+        $p->number_of_comments = $validatedData['number_of_comments'];
+        $p->account_id = $validatedData['account_id'];
+        $p->save();
+
+        session()->flash('message', 'Post created successfully.');
+        return redirect()->route('posts.index');
     }
 
     /**

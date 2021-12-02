@@ -15,7 +15,13 @@ class CreateTopicsTable extends Migration
     {
         Schema::create('topics', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->text('description');
+            $table->boolean('is_deleted')->default(0);
+        //  $table->bigInteger('account_id')->unsigned(); 
             $table->timestamps();
+
+            
         });
     }
 

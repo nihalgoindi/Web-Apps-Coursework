@@ -18,7 +18,13 @@ class CreateAccountsTable extends Migration
             $table->string('username');
             $table->string('email_address');
             $table->integer('number_of_posts');
+            
+/*             $table->bigInteger('user_id')->unsigned();
+            
 
+            $table->foreign('user_id')->references('id')->
+                on('users')->onDelete('cascade')->
+                onUpdate('cascade'); */
 
             $table->timestamps();
             

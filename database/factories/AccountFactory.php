@@ -25,6 +25,7 @@ class AccountFactory extends Factory
             'username' => $this->faker->userName,
             'email_address' => $this->faker->safeEmail,
             'number_of_posts' => $this->faker->randomDigitNotNull,
+           // 'user_id' => User::inRandomOrder()->first()->id,
         ];
     }
 }

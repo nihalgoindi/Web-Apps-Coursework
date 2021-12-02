@@ -22,7 +22,9 @@ class CommentFactory extends Factory
     {
         return [
             'text' => $this->faker->sentence(10),
+            'account_id' => Post::inRandomOrder()->first()->id,
             'post_id' => Post::inRandomOrder()->first()->id,
+
         ];
     }
 }

@@ -17,9 +17,7 @@ class CreatePostsTable extends Migration
             $table->id();
             $table->string('title');
             $table->text('caption');
-            $table->integer('number_of_likes')->nullable();
             $table->integer('is_deleted');
-            $table->integer('number_of_comments')->nullable();
             $table->bigInteger('account_id')->unsigned();
             
 

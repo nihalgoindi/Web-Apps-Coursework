@@ -16,4 +16,12 @@ class Topic extends Model
     {
         return $this->hasMany(Post::class);
     }
+
+    /**
+     * Get the accounts that have posted about this topic.
+     */
+    public function accounts()
+    {
+        return $this->hasMany(Account::class);
+    }
 }

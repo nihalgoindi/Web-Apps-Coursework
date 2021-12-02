@@ -21,6 +21,10 @@ class CreateTopicsTable extends Migration
         //  $table->bigInteger('account_id')->unsigned(); 
             $table->timestamps();
 
+           /*  $table->foreign('account_id')->references('id')->
+                on('accounts')->onDelete('cascade')->
+                onUpdate('cascade');     */
+
             
         });
     }

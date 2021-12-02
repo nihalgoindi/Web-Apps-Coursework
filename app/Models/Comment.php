@@ -17,5 +17,13 @@ class Comment extends Model
         return $this->belongsTo(Post::class);
     }
 
+    /**
+     * Get the account that this comment belongs to.
+     */
+    public function account()
+    {
+        return $this->belongsTo(Account::class);
+    }
+
 }
 

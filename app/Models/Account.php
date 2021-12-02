@@ -24,6 +24,22 @@ class Account extends Model
     {
         return $this->hasMany(Post::class);
     }
+
+    /**
+     * An account can like many things (Posts or Comments)
+     */
+    public function likes()
+    {
+        return $this->hasMany(Like::class);
+    }
+
+    /**
+     * An account can like comment on things 
+     */
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
 }
 
 

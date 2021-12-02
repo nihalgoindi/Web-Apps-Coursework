@@ -18,17 +18,17 @@ class CreateTopicsTable extends Migration
             $table->string('title');
             $table->text('description');
             $table->boolean('is_deleted')->default(0);
-        //  $table->bigInteger('account_id')->unsigned(); 
+        //    $table->bigInteger('account_id')->unsigned(); 
             $table->bigInteger('post_id')->unsigned();
             $table->timestamps();
 
-           /*  $table->foreign('account_id')->references('id')->
-                on('accounts')->onDelete('cascade')->
-                onUpdate('cascade');     */
+        //   $table->foreign('account_id')->references('id')->
+        //        on('accounts')->onDelete('cascade')->
+        //        onUpdate('cascade');
 
-             /*  $table->foreign('post_id')->references('id')->
+            $table->foreign('post_id')->references('id')->
                 on('posts')->onDelete('cascade')->
-                onUpdate('cascade');     */    
+                onUpdate('cascade');    
 
             
         });

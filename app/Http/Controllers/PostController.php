@@ -25,6 +25,7 @@ class PostController extends Controller
      */
     public function create()
     {
+        //
         return view('posts.create');
     }
 
@@ -36,11 +37,11 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-         $validatedData = $request->validate([
+        //
+        $validatedData = $request->validate([
             'title' => 'required|max:255',
             'caption' => 'nullable|string',
-            'number_of_likes' => 'nullable|integer',
-            'number_of_comments' => 'nullable|integer',
+            'is_deleted' => 'required|integer',
             'account_id' => 'required|integer',
         ]);
 
@@ -48,8 +49,7 @@ class PostController extends Controller
         $p = new Post;
         $p->title = $validatedData['title'];
         $p->caption = $validatedData['caption'];
-        $p->number_of_likes = $validatedData['number_of_likes'];
-        $p->number_of_comments = $validatedData['number_of_comments'];
+        $p->is_deleted = $validatedData['is_deleted'];
         $p->account_id = $validatedData['account_id'];
         $p->save();
 
@@ -65,6 +65,7 @@ class PostController extends Controller
      */
     public function show($id)
     {
+        //
         $post = Post::findOrFail($id);
         return view('posts.show', ['post' => $post]);
     }

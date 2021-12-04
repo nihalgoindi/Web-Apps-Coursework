@@ -14,11 +14,8 @@
         <p>Caption: <input type="text" name="caption"
             value="{{ old('caption') }}"></p>
 
-        <p>Number of Likes: <input type="text" name="number_of_likes"
-            value="{{ old('number_of_likes') }}"></p>
-        
-        <p>Number of Comments: <input type="text" name="number_of_comments"
-            value="{{ old('number_of_coments') }}"></p>
+        <p>Is Deleted: <input type="text" name="is_deleted"
+            value="{{ old('is_deleted') }}"></p>
 
         <p>Account Id: <input type="text" name="account_id"
             value="{{ old('account_id') }}"></p>

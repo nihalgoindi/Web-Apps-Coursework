@@ -25,6 +25,14 @@ class Account extends Model
         return $this->hasMany(Post::class);
     }
 
+    /**
+     * An account can comment on many things.
+     */
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
+
 
 }
 

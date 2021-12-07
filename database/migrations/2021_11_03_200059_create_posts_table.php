@@ -16,8 +16,8 @@ class CreatePostsTable extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->text('caption');
-            $table->integer('is_deleted');
+            $table->text('body');
+            
             $table->bigInteger('account_id')->unsigned();
             
 

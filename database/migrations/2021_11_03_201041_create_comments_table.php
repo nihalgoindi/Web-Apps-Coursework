@@ -25,7 +25,8 @@ class CreateCommentsTable extends Migration
 
             $table->foreign('account_id')->references('id')->
                 on('accounts')->onDelete('cascade')->
-                onUpdate('cascade');    
+                onUpdate('cascade');
+  
 
             $table->timestamps();
         });

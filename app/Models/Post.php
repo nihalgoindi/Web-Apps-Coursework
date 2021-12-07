@@ -18,14 +18,6 @@ class Post extends Model
     }
 
     /**
-     * Get the topic that this post belongs to.
-     */
-    public function topic()
-    {
-        return $this->belongsTo(Topic::class);
-    }
-
-    /**
      * Get the comments that belong to the post.
      */
     public function comments()

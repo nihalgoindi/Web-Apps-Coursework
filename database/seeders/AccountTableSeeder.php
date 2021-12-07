@@ -13,12 +13,6 @@ class AccountTableSeeder extends Seeder
      */
     public function run()
     {
-        $a = new Account;
-        $a->username = "ElonM";
-        $a->number_of_posts = 5;
-        $a->user_id = 1;
-        $a->save();
-
         $accounts = Account::factory()->count(10)->create();
     }
 }

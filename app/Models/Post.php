@@ -25,13 +25,6 @@ class Post extends Model
         return $this->hasMany(Comment::class);
     }
 
-    /**
-     * Get the likes that belong to the post.
-     */
-    public function likes()
-    {
-        return $this->hasMany(Like::class);
-    }
 
 }
 

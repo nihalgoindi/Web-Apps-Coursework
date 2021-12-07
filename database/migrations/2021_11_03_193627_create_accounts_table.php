@@ -16,13 +16,13 @@ class CreateAccountsTable extends Migration
         Schema::create('accounts', function (Blueprint $table) {
             $table->id();
             $table->string('username');
+           // $table->bigInteger('user_id')->unsigned();
             $table->timestamps();
 
-            $table->bigInteger('account_id')->unsigned();
-
-            $table->foreign('account_id')->references('id')->
-                on('accounts')->onDelete('cascade')->
-                onUpdate('cascade');
+         //   $table->foreign('user_id')->references('id')->
+         //       on('users')->onDelete('cascade')->
+         //       onUpdate('cascade');
+             
             
         });
     }

@@ -14,12 +14,6 @@ class UserTableSeeder extends Seeder
      */
     public function run()
     {
-        $u = new User;
-        $u->name = "Elon Musk";
-        $u->email = "ElonM@Billionaire.com";
-        $u->password = bcrypt('password');
-        $u->save();
-
-        $users = User::factory()->count(10)->create();
+        $users = User::factory()->count(1)->create();
     }
 }

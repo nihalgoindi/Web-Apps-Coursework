@@ -44,9 +44,10 @@ class User extends Authenticatable
 
     /**
      * The account that belongs to this user
-     */
+     
     public function account()
     {
         return $this->hasOne(Account::class);
     }
+    */
 }

@@ -17,7 +17,7 @@ class AccountFactory extends Factory
         return [
             //
             'username' => $this->faker->userName,
-            //'user_id' => User::inRandomOrder()->first()->id,
+            'user_id' => User::factory(),
         ];
     }
 }

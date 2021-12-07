@@ -11,12 +11,13 @@ class Account extends Model
 
     /**
      * Get the user the the account belongs to.
+     * */
      
     public function user()
     {
         return $this->belongsTo(User::class);
     }
-    */
+    
 
     /**
      * Get the posts that belong to the account.

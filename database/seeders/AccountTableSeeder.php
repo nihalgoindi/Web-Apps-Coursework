@@ -15,8 +15,8 @@ class AccountTableSeeder extends Seeder
     {
         $a = new Account;
         $a->username = "ElonM";
-        $a->email_address = "ElonM@billionaire.com";
         $a->number_of_posts = 5;
+        $a->user_id = 1;
         $a->save();
 
         $accounts = Account::factory()->count(10)->create();

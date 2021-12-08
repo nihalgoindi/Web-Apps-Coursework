@@ -18,13 +18,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/test', function () {
-    session()->flash('alert', 'Settings saved successfully.');
-    session()->flash('warning', 'Please confirm your email address.');
-    session()->flash('danger', 'Passwords do not match.');
-    return view('test');
-});
-
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
@@ -40,5 +33,9 @@ Route::post('/posts', [PostController::class, 'store'])
 
 Route::get('/posts/{id}', [PostController::class, 'show'])
     ->name('posts.show'); //->middleware(['auth']);
+
+Route::get('/home', function(){
+    return view('layouts.home.index');
+});
 
 require __DIR__.'/auth.php';

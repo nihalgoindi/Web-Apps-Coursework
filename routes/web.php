@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,7 +24,7 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 Route::get('/blog', [PostController::class, 'index'])
-    ->name('blog.index'); //->middleware(['auth']);
+    ->name('posts.index'); //->middleware(['auth']);
 
 Route::get('/posts/create', [PostController::class, 'create'])
     ->name('posts.create'); //->middleware(['auth']);

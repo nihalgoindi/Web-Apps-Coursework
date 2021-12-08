@@ -27,7 +27,7 @@
                     </p>
                 </div>
                 <nav class="space-x-4 text-gray-300 text-sm sm:text-base">
-                    <a class="no-underline hover:underline" href="/">Home</a>
+                    <a class="no-underline hover:underline" href="/home">Home</a>
                     <a class="no-underline hover:underline" href="/blog">Blog</a>
                     @guest
                     <a class="no-underline hover:underline" href="{{ route('login') }}">{{ __('Login') }}</a>
@@ -87,7 +87,7 @@
 
                     <div>
                         <h3 class="text-l sm:font-bold text-gray-100">
-                            Pages
+                            Find Us
                         </h3>
 
                         <ul class="py-4 sm:text-s pt-4 text-gray-400">
@@ -116,7 +116,7 @@
 
                     <div>
                         <h3 class="text-l sm:font-bold text-gray-100">
-                            Pages
+                            Recent Posts
                         </h3>
 
                         <ul class="py-4 sm:text-s pt-4 text-gray-400">

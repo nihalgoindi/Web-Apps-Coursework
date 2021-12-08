@@ -22,8 +22,8 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-Route::get('/posts', [PostController::class, 'index'])
-    ->name('posts.index'); //->middleware(['auth']);
+Route::get('/blog', [PostController::class, 'index'])
+    ->name('blog.index'); //->middleware(['auth']);
 
 Route::get('/posts/create', [PostController::class, 'create'])
     ->name('posts.create'); //->middleware(['auth']);

@@ -15,7 +15,7 @@ class PostController extends Controller
     public function index()
     {
         $posts = Post::all();
-        return view('layouts.posts.index', ['posts' => $posts]);
+        return view('posts.index', ['posts' => $posts]);
     }
 
     /**
@@ -25,7 +25,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        return view('posts.create');
     }
 
     /**
@@ -36,7 +36,19 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'title' => 'required|max:255',
+            'body' => 'required',
+            'account_id' => 'required|integer',
+        ]);
+
+        $p = new Post;
+        $p->title = $validatedData['title'];
+        $p->body = $validatedData['body'];
+        $p->account_id = $validatedData['account_id'];
+        $p->save();
+
+        return redirect()->route('posts.index');
     }
 
     /**
@@ -47,7 +59,8 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        //
+        $post = Post::findOrFail($id);
+        return view('posts.show', ['post' => $post]);
     }
 
     /**

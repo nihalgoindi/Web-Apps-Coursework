@@ -10,7 +10,7 @@
 </div>
 
 <div class="pt-16 w-4/5 m-auto">
-    <a href="/posts/create" class="bg-blue-500 uppercase bg-transparent text-gray-100 text-xs font-extrabold py-3 px-5 rounded-3xl">
+    <a href="/posts/create" class="flex-shrink-0  bg-blue-500 hover:bg-blue-600 uppercase bg-transparent text-gray-100 text-xs font-extrabold py-3 px-5 rounded-3xl">
         Create Post
     </a>   
 </div>

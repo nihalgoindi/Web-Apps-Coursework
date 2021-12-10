@@ -39,12 +39,13 @@ class PostController extends Controller
         $validatedData = $request->validate([
             'title' => 'required|max:255',
             'body' => 'required',
-            'account_id' => 'required|integer',
+            'image' => 'required|mimes:jpg,png,jeg|max:5048',
         ]);
 
         $p = new Post;
         $p->title = $validatedData['title'];
         $p->body = $validatedData['body'];
+        $p->image = $validatedData['image'];
         $p->account_id = $validatedData['account_id'];
         $p->save();
 

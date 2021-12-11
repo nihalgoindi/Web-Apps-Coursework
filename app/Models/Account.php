@@ -9,7 +9,7 @@ class Account extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['username'];
+    protected $guarded = [];
 
     /**
      * Get the user the the account belongs to.

@@ -56,6 +56,7 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
 
+        
         $account = Account::create([
             'username' => $request->username,
             'user_id' =>  $user->id,

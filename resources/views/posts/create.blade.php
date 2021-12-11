@@ -9,6 +9,22 @@
     </div>
 </div>
 
+<!-- Errors -->
+
+@if ($errors->any())
+    <div class="w-4/5 m-auto">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li class="w-2/6 mb-4 text-gray-50 bg-red-700 rounded-2xl
+                py-4">
+                    {{ $error }}
+                </li>     
+            @endforeach
+        </ul>
+    </div>
+@endif
+
+
 <div class="w-4/5  m-auto pt-20">
     <form method="POST" action="{{ route('posts.store') }}" enctype="multipart/form-data" class="space-y-5">
         @csrf
@@ -18,13 +34,13 @@
             <span class="mt-2 text-base leading-normal">
                 Upload a file
             </span>
-            <input type="file" name="image" class="hidden">
+            <input type="file" name="image" class="hidden" value="{{ old('image') }}">
         </label>
         
-        <input type="text" name="title" placeholder="Title..." 
+        <input type="text" name="title" placeholder="Title..." value="{{ old('title') }}" 
         class="bg-transparent block border-none w-full h-20 text-gray-700 text-6xl p-8">
 
-        <textarea name="Body" placeholder=" Body"
+        <textarea name="body" placeholder=" Body" value="{{ old('body') }}"
         class="py-20 bg-transparent block border-none w-full h-60 text-gray-700 text-xl"></textarea>
 
         <div class="bg-grey-lighter pt-15">

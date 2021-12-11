@@ -36,18 +36,23 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        $validatedData = $request->validate([
+        $request->validate([
             'title' => 'required|max:255',
             'body' => 'required',
             'image' => 'required|mimes:jpg,png,jeg|max:5048',
         ]);
 
-        $p = new Post;
-        $p->title = $validatedData['title'];
-        $p->body = $validatedData['body'];
-        $p->image = $validatedData['image'];
-        $p->account_id = $validatedData['account_id'];
-        $p->save();
+        //gives the image a name of title-uniqid.extension and places it in the folder
+        $ImageName = $request->title . '-' . uniqid() . $request->image->extension();
+        $request->image->move(public_path('post_images'), $ImageName);
+
+        $post = Post::create([
+            'title' => $request->input('title'),
+            'body' => $request->input('body'),
+            'image_path' => $ImageName,
+            'account_id' => auth()->user()->account->id,
+        ]);
+        
 
         session()->flash('message', 'Post was created successfully.');
 

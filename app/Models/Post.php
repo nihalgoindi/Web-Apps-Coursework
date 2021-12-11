@@ -9,6 +9,8 @@ class Post extends Model
 {
     use HasFactory;
 
+    protected $guarded = [];
+
     /**
      * Get the account that this post belongs to.
      */

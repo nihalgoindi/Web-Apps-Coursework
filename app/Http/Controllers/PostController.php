@@ -49,6 +49,8 @@ class PostController extends Controller
         $p->account_id = $validatedData['account_id'];
         $p->save();
 
+        session()->flash('message', 'Post was created successfully.');
+
         return redirect()->route('posts.index');
     }
 

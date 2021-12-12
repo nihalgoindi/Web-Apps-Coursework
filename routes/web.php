@@ -35,6 +35,9 @@ Route::post('/posts', [PostController::class, 'store'])
 Route::get('/posts/{id}', [PostController::class, 'show'])
     ->name('posts.show'); //->middleware(['auth']);
 
+Route::get('/posts/edit/{id}', [PostController::class, 'edit'])
+    ->name('posts.edit');
+
 Route::get('/home', function(){
     return view('home.index');
 });

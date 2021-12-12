@@ -47,6 +47,13 @@
                 Keep Reading
             </a>
 
+            @if(((Auth::user()->id) != NULL) && (Auth::user()->account->id == $post->account_id))
+                <span class="float-right">
+                    <a href={{ route('posts.edit', [ 'id' => $post->id ] ) }} class="text-gray-700 italic hover:text-gray-900 pb-1 border-b-2">
+                        Edit Post
+                    </a>
+                </span>
+            @endif
         </div>
     </div>
 @endforeach

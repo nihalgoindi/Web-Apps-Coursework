@@ -43,7 +43,7 @@
                 {{ $post->body }}
             </p>
 
-            <a href="/posts/{id}" class="uppercase bg-blue-500 hover:bg-blue-600 text-gray-100 text-lg font-extrabold py-4 px-8 rounded-3xl">
+            <a href={{ route('posts.show', [ 'id' => $post->id ] ) }} class="uppercase bg-blue-500 hover:bg-blue-600 text-gray-100 text-lg font-extrabold py-4 px-8 rounded-3xl">
                 Keep Reading
             </a>
 

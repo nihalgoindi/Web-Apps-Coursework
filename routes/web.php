@@ -38,6 +38,9 @@ Route::get('/posts/{id}', [PostController::class, 'show'])
 Route::get('/posts/edit/{id}', [PostController::class, 'edit'])
     ->name('posts.edit');
 
+Route::put('/posts/update/', [PostController::class, 'update'])
+    ->name('posts.update');
+
 Route::get('/home', function(){
     return view('home.index');
 });

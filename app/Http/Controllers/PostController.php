@@ -79,7 +79,8 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        //
+        $post = Post::findOrFail($id);
+        return view('posts.edit', ['post' => $post]);
     }
 
     /**
@@ -91,7 +92,19 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $post = Post::findOrFail($id);
+        $post->update([    
+            'title' => $request->input('title'),
+            'body' => $request->input('body'),
+            'image_path' => $ImageName,
+            'account_id' => auth()->user()->account->id,
+        ]);
+
+        $post->save($request->all());
+        session()->flash('message', 'Post was updated successfully.');
+
+        return redirect()->route('posts.index');
+
     }
 
     /**

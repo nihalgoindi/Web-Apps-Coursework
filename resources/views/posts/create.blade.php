@@ -44,20 +44,18 @@
         class="py-20 bg-transparent block border-none w-full h-60 text-gray-700 text-xl"></textarea>
 
         <div class="bg-grey-lighter pt-15">
-            <button type="button" class="flex-shrink-0  bg-blue-500 hover:bg-blue-600 uppercase bg-transparent text-gray-100 text-lg 
-            font-extrabold py-3 px-11 rounded-3xl">
-                Cancel
-            </button>
+            <a href="{{ route('posts.index') }}">
+                <button type="button" class="flex-shrink-0  bg-blue-500 hover:bg-blue-600 uppercase bg-transparent text-gray-100 text-lg 
+                font-extrabold py-3 px-11 rounded-3xl">
+                    Cancel
+                </button>
+            </a>
             <button type="submit" class="flex-shrink-0  bg-blue-500 hover:bg-blue-600 uppercase bg-transparent text-gray-100 text-lg 
             font-extrabold py-3 px-5 rounded-3xl">
                 Submit Post
             </button>
             
         </div>
-        
-       
-
-    
     </form>
 </div>
 

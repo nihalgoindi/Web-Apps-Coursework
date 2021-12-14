@@ -26,7 +26,7 @@
 
 
 <div class="w-4/5  m-auto pt-20">
-    <form method="POST" action="{{ route('posts.update'), $post->id }}" enctype="multipart/form-data" class="space-y-5">
+    <form method="POST" action="{{ route('posts.update', ['id' => $post->id])}}" enctype="multipart/form-data" class="space-y-5">
         @csrf
         @method('PUT')
 
@@ -47,10 +47,17 @@
         </textarea>
 
         <div class="bg-grey-lighter pt-15">
-            <button type="button" class="flex-shrink-0  bg-blue-500 hover:bg-blue-600 uppercase bg-transparent text-gray-100 text-lg 
-            font-extrabold py-3 px-11 rounded-3xl">
-                Cancel
-            </button>
+            <form action="{{ route('posts.index') }} method="GET">
+                <a href="{{ route('posts.index') }}">
+                    <button type="button" class="flex-shrink-0  bg-blue-500 hover:bg-blue-600 uppercase bg-transparent text-gray-100 text-lg 
+                    font-extrabold py-3 px-11 rounded-3xl">
+                        Cancel
+                    </button>
+                </a>
+                
+            </form>
+            
+
             <button type="submit" class="flex-shrink-0  bg-blue-500 hover:bg-blue-600 uppercase bg-transparent text-gray-100 text-lg 
             font-extrabold py-3 px-5 rounded-3xl">
                 Update Post

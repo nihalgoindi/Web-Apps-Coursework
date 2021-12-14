@@ -47,17 +47,30 @@
                 Keep Reading
             </a>
 
-            @if(((Auth::user()->id) != NULL) && (Auth::user()->account->id == $post->account_id))
+            @if((isset(Auth::user()->id)) && (Auth::user()->account->id == $post->account_id))
                 <span class="float-right">
-                    <a href={{ route('posts.edit', [ 'id' => $post->id ] ) }} class="text-gray-700 italic hover:text-gray-900 pb-1 border-b-2">
+                    <a href={{ route('posts.edit', [ 'id' => $post->id ] ) }} 
+                       class="text-gray-700 italic hover:text-gray-900 pb-1 border-b-2">
                         Edit Post
                     </a>
+                </span>
+                
+                <span class="float-right">
+                    <form method="POST" action="{{ route('posts.delete', ['id' => $post->id ] ) }}">
+                        @csrf
+                        @method('DELETE')
+                        <button class="text-red-500 pr-3" type="submit">
+                            Delete Post
+                        </button>
+                    </form>
                 </span>
             @endif
         </div>
     </div>
+
 @endforeach
 
+{{ $posts->links() }}
 
 
 @endsection

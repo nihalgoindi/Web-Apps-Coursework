@@ -38,8 +38,11 @@ Route::get('/posts/{id}', [PostController::class, 'show'])
 Route::get('/posts/edit/{id}', [PostController::class, 'edit'])
     ->name('posts.edit');
 
-Route::put('/posts/update/', [PostController::class, 'update'])
+Route::put('/posts/update/{id}', [PostController::class, 'update'])
     ->name('posts.update');
+
+Route::delete('/posts/delete/{id}', [PostController::class, 'destroy'])
+    ->name('posts.delete');
 
 Route::get('/home', function(){
     return view('home.index');

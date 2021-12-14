@@ -14,7 +14,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::all();
+        $posts = Post::paginate(3);
         return view('posts.index', ['posts' => $posts]);
     }
 
@@ -96,8 +96,7 @@ class PostController extends Controller
         $post->update([    
             'title' => $request->input('title'),
             'body' => $request->input('body'),
-            'image_path' => $ImageName,
-            'account_id' => auth()->user()->account->id,
+            
         ]);
 
         $post->save($request->all());
@@ -115,6 +114,11 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $post = Post::findOrFail($id);
+        $post->delete();
+
+        session()->flash('message', 'Post was deleted successfully.');
+
+        return redirect()->route('posts.index');
     }
 }

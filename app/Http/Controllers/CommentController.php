@@ -17,6 +17,20 @@ class CommentController extends Controller
         //
     }
 
+    public function apiIndex()
+    {
+        $comments = Enclosure::all();
+        return $comments;
+    }
+
+    public function apiStore(Request $request)
+    {
+        $comment = new Comment();
+        $comment->text = $request['text'];
+        $comment->save();
+        return $comment;
+    }
+
     /**
      * Show the form for creating a new resource.
      *

@@ -19,5 +19,54 @@
     </p>
 </div>
 
+<h2>Comments</h2>
+
+<div id="root">
+    <ul>
+        <li>
+
+        </li>
+    </ul>
+    <h3>New Comment</h3>
+    Comment: <input type="text" id="input" v-model="newComment">
+    <button @click="createComment">
+        Create
+    </button>
+</div>
+
+<script>
+    var app = new Vue({
+        el: "#root",
+        data: {
+            comments: [],
+            newComment: '',
+        },
+        methods: {
+            createEnclosure: function(){
+                axios.post("{{ route ('api.comments.store') }}",
+                {
+                    name: this.newComment    
+                })
+                .then(response => {
+                    this.comments.push(response.data);
+                    this.newComment = '';
+                })
+                .catch(response => {
+                    console.log(response);
+                })
+            }
+        },
+        mounted() {
+            axios.get("{{ route ('api.enclosures.index') }}")
+            .then(response => {
+                this.comments = response.data;
+            })
+            .catch(response => {
+                console.log(response);
+            })
+        },
+    });
+</script>
+
 
 @endsection()

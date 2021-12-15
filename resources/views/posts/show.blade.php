@@ -19,5 +19,9 @@
     </p>
 </div>
 
+<div>
+    @yield('comments')
+</div>
+
 
 @endsection()

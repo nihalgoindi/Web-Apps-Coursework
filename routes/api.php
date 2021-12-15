@@ -15,12 +15,6 @@ use App\Http\Controllers\CommentController;
 |
 */
 
-Route::get('/enclosures', [EnclosureController::class, 'apiIndex'])
-    ->name('api.enclosures.index');
-
-Route::post('/enclosures', [EnclosureController::class,'apiStore'])
-    ->name('api.enclosures.store');
-
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });

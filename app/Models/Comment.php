@@ -9,6 +9,9 @@ class Comment extends Model
 {
     use HasFactory;
 
+    protected $guarded = [];
+    
+
      /**
      * Get the post that this comment belongs to.
      */

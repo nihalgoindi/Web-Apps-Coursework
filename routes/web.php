@@ -51,7 +51,14 @@ Route::delete('/posts/delete/{id}', [PostController::class, 'destroy'])
 Route::post('comments/{post_id}', [CommentController::class, 'store'])
     ->name('comments.store');
 
+Route::get('comments/edit/{id}', [CommentController::class, 'edit'])
+    ->name('comments.edit');
 
+Route::put('comments/update/{id}', [CommentController::class, 'update'])
+    ->name('comments.update');
+
+Route::delete('/comments/delete/{id}', [CommentController::class, 'destroy'])
+    ->name('comments.delete');
 
 Route::get('/home', function(){
     return view('home.index');

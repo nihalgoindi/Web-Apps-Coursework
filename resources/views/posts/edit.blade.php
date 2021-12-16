@@ -11,7 +11,7 @@
 @endsection
 
 
-
+@section('content')
 <div class="w-4/5  m-auto pt-20">
     <form method="POST" action="{{ route('posts.update', ['id' => $post->id])}}" enctype="multipart/form-data" class="space-y-5">
         @csrf

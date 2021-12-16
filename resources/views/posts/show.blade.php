@@ -56,14 +56,14 @@
                             </p>
                             @if((isset(Auth::user()->id)) && (Auth::user()->account->id == $comment->account_id))
                             <span class="float-right">
-                                <a href={{ route('posts.edit', ['id' => $post->id]) }}
+                                <a href={{ route('comments.edit', ['id' => $comment->id]) }}
                                     class="text-gray-700 italic hover:text-gray-900 pb-1 border-b-2">
                                     Edit
                                 </a>
                             </span>
 
                             <span class="float-right">
-                                <form method="POST" action="{{ route('posts.delete', ['id' => $post->id]) }}">
+                                <form method="POST" action="{{ route('comments.delete', ['id' => $comment->id]) }}">
                                     @csrf
                                     @method('DELETE')
                                     <button class="text-red-500 pr-3" type="submit">

@@ -57,8 +57,6 @@ Route::put('comments/update/{id}', [CommentController::class, 'update'])
 Route::delete('/comments/delete/{id}', [CommentController::class, 'destroy'])
     ->name('comments.delete');
 
-Route::get('/home', function(){
-    return view('home.index');
-});
+
 
 require __DIR__.'/auth.php';

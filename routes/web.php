@@ -45,9 +45,6 @@ Route::put('/posts/update/{id}', [PostController::class, 'update'])
 Route::delete('/posts/delete/{id}', [PostController::class, 'destroy'])
     ->name('posts.delete');
 
-//Route::get('/posts/create', [CommentController::class, 'create'])
-   // ->name('posts.create')->middleware(['auth']);
-
 Route::post('comments/{post_id}', [CommentController::class, 'store'])
     ->name('comments.store');
 

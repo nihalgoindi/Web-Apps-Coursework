@@ -30,13 +30,14 @@
                 <nav class="space-x-4 text-gray-300 text-sm sm:text-base">
                     <a class="no-underline hover:underline" href="/home">Home</a>
                     <a class="no-underline hover:underline" href="/blog">Blog</a>
+                    <a class="no-underline hover:underline" href="/tags">Tags</a>
                     @guest
                     <a class="no-underline hover:underline" href="{{ route('login') }}">{{ __('Login') }}</a>
                     @if (Route::has('register'))
                     <a class="no-underline hover:underline" href="{{ route('register') }}">{{ __('Register') }}</a>
                     @endif
                     @else
-                    <span>{{ Auth::user()->name }}</span>
+                    <span>{{ Auth::user()->account->username }}</span>
 
                     <a href="{{ route('logout') }}" class="no-underline hover:underline" onclick="event.preventDefault();
                                 document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>

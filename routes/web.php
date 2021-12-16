@@ -25,7 +25,7 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 Route::get('/blog', [PostController::class, 'index'])
-    ->name('posts.index'); //->middleware(['auth']);
+    ->name('posts.index');
 
 Route::get('/posts/create', [PostController::class, 'create'])
     ->name('posts.create')->middleware(['auth']);
@@ -34,28 +34,28 @@ Route::post('/posts', [PostController::class, 'store'])
     ->name('posts.store'); //->middleware(['auth']);
 
 Route::get('/posts/{id}', [PostController::class, 'show'])
-    ->name('posts.show'); //->middleware(['auth']);
+    ->name('posts.show'); 
 
 Route::get('/posts/edit/{id}', [PostController::class, 'edit'])
-    ->name('posts.edit');
+    ->name('posts.edit')->middleware(['auth']);
 
 Route::put('/posts/update/{id}', [PostController::class, 'update'])
-    ->name('posts.update');
+    ->name('posts.update')->middleware(['auth']);
 
 Route::delete('/posts/delete/{id}', [PostController::class, 'destroy'])
-    ->name('posts.delete');
+    ->name('posts.delete')->middleware(['auth']);
 
 Route::post('comments/{post_id}', [CommentController::class, 'store'])
-    ->name('comments.store');
+    ->name('comments.store')->middleware(['auth']);
 
 Route::get('comments/edit/{id}', [CommentController::class, 'edit'])
-    ->name('comments.edit');
+    ->name('comments.edit')->middleware(['auth']);
 
 Route::put('comments/update/{id}', [CommentController::class, 'update'])
-    ->name('comments.update');
+    ->name('comments.update')->middleware(['auth']);
 
 Route::delete('/comments/delete/{id}', [CommentController::class, 'destroy'])
-    ->name('comments.delete');
+    ->name('comments.delete')->middleware(['auth']);
 
 
 

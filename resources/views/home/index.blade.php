@@ -18,7 +18,7 @@
                    Are you looking for blogs posted by other dogs?
                 </h1>
                 <a 
-                    href="/blog"
+                    href="/"
                     class="text-center bg-gray-50 text-gray-700 py-2 px-4 font-bold
                     text-xl uppercase">
                     Read More
@@ -57,19 +57,9 @@
     </div>
 
     <div class="text-center py-15">
-        <span class="uppercase text-s text-gray-400">
-            Blog
-        </span>
-
         <h2 class="text-4xl font-bold py-10">
             Recent Posts
         </h2>
-
-        <p class="m-auto w-4/5 text-gray-500">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-            Error debitis adipisci provident exercitationem, perspiciatis ut dolore quibusdam aliquam qui est voluptatum, incidunt eveniet? 
-            Nostrum fugiat quibusdam facilis fugit voluptates reiciendis.
-        </p>
     </div>
 
        <div class="sm:grid grid-cols-2 w-4/5 m-auto">

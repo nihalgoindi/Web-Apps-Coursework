@@ -1,28 +1,18 @@
 @extends('layouts.app')
 
-@section('content')
-<div class="w-4/5 m-auto text-left">
-    <div class="pb-10 ">
-        <h1 class="text-6xl">
+@section('title')
+<div class="w-4/5 m-auto text-center">
+    <div class="pb-10 py-15 border-b border-gray-200">
+        <h1 class="text-6xl font-bold">
             Edit Comment
         </h1>
     </div>
 </div>
+@endsection
 
-<!-- Errors -->
+@section('content')
 
-@if ($errors->any())
-    <div class="w-4/5 m-auto">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li class="w-2/6 mb-4 text-gray-50 bg-red-700 rounded-2xl
-                py-4">
-                    {{ $error }}
-                </li>     
-            @endforeach
-        </ul>
-    </div>
-@endif
+
 
 
 <div class="w-4/5  m-auto pt-20">

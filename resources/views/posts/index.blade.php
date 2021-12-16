@@ -1,21 +1,19 @@
 @extends('layouts.app')
 
-@section('content')
+@section('title')
 <div class="w-4/5 m-auto text-center">
     <div class="pb-10 py-15 border-b border-gray-200">
-        <h1 class="text-6xl">
+        <h1 class="text-6xl font-bold">
             Blog Posts
         </h1>
     </div>
 </div>
+@endsection
 
-@if (session()->has('message'))
-    <div class="w-4/5 m-auto mt-10 pl-2">
-        <p class="w-2/6 mb-4 text-gray-50 bg-green-500 rounded-2xl py-4">
-            {{ session()->get('message') }}
-        </p>
-    </div>
-@endif
+@section('content')
+
+
+
 
 <div class="pt-16 w-4/5 m-auto">
     <a href="/posts/create" class="flex-shrink-0  bg-blue-500 hover:bg-blue-600 uppercase bg-transparent text-gray-100 text-xs font-extrabold py-3 px-5 rounded-3xl">

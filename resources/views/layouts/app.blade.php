@@ -30,7 +30,6 @@
                 <nav class="space-x-4 text-gray-300 text-sm sm:text-base">
                     <a class="no-underline hover:underline" href="/">Home</a>
                     <a class="no-underline hover:underline" href="/blog">Blog</a>
-                    <a class="no-underline hover:underline" href="/tags">Tags</a>
                     @guest
                     <a class="no-underline hover:underline" href="{{ route('login') }}">{{ __('Login') }}</a>
                     @if (Route::has('register'))
@@ -49,10 +48,42 @@
             </div>
         </header>
 
+        @yield('title')
+    <!--Errors-->
+        @if ($errors->any())
+            <div class="w-4/5 m-auto pt-4">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                    <div role="alert">
+                        <div class="bg-red-500 text-white font-bold rounded-t px-4 py-2 ">
+                            Please Fix the Following Errors
+                        </div>
+                        <div class="border border-t-0 border-red-400 rounded-b bg-red-100 px-4 py-3 text-red-700">
+                            <p>{{ $error }}</p>
+                        </div>
+                    </div>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
 
+    <!--Messages-->
+
+        @if (session()->has('message'))
+            <div class="w-4/5 m-auto pt-4">
+                <div role="alert">
+                    <div class="bg-green-500 text-white font-bold rounded-t px-4 py-2 ">
+                        Success!
+                    </div>
+                    <div class="border border-t-0 border-green-400 rounded-b bg-green-500 px-4 py-3 text-white">
+                        <p>{{ session()->get('message')}}</p>
+                    </div>
+                </div>
+            </div>
+        @endif
+        
         @yield('content')
         
-
         <div>
             <footer class="bg-gray-800 py-20 mt-20">
                 <div class="sm:grid grid-cols-3 w-4/5 pb-10 m-auto border-b-2

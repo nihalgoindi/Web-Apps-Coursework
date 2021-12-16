@@ -18,7 +18,7 @@ class CommentController extends Controller
     public function store(Request $request, $post_id)
     {
         $request->validate([
-            'text' => 'required|min:5|max:2000',
+            'text' => 'required|max:2000',
         ]);
 
         $post = Post::FindOrFail($post_id);
@@ -66,6 +66,11 @@ class CommentController extends Controller
      */
     public function destroy(Comment $comment)
     {
-        //
+        $comment = Post::findOrFail($comment);
+        $comment->delete();
+
+        session()->flash('message', 'Comment was deleted successfully.');
+
+        return back();
     }
 }
